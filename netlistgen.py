@@ -5,156 +5,101 @@ import xml.dom.minidom
 # LINELENGTH = 1024
 # TAB_LENGTH = 4
 
-# The function write_packing_results_to_xml prints a skeleton of a netlist given a list of inputs and outputs
-# It creates a top block, then a block for each input and output
-# Two libraries are used:
-# 1. xml.etree.ElementTree, which provides the ability to create and modify XML files with Python
-# 2. xml.dom.minidom, which is used for indenting said XML file
+input_size = 144
+output_size = 44
+connectivity = [[1,2,3],
+                [4,5,6],
+                [7,8,9]
+                ]
 
-# When running the program, it prints out an XML netlist based on the example from https://docs.verilogtorouting.org/en/latest/vpr/file_formats/#packed-netlist-format-net
-# given inputs pa, pb, pc, and outputs pd, pe, pf, and pg, a netlist is generated
-
-# there's a file titled netlist.xml that is created, but it is without indents
-# to account for this, the terminal also prints the indented version of the netlist
-# more work is needed, but this is a functional start!
-
-# NOTE: I assumed the output ports had the same structure as the input ports, but I am unsure if this is correct
-# NOTE: the TODOs represent values that I believe are reliant on the initial clustering, so I will need to fix those too
-
-def write_packing_results_to_xml(inputs, outputs):
+def write_packing_results_to_xml():
     root = ET.Element("block")                          # top block
     root.set("name", "b1.net")
     root.set("instance", "FPGA_packed_netlist[0]")
+    root.set("architecture_id", "TODO")
 
     topInputs = ET.Element("inputs")
     topInputs.text = "pclk"
     root.append(topInputs)
 
     topOutputs = ET.Element("outputs")
-    topOutputs.text = ' '.join(outputs)
     root.append(topOutputs)
 
     topClocks = ET.Element("clocks")
     topClocks.text = "pclk"
-    root.append(topClocks)   
+    root.append(topClocks)
 
-    for i in inputs:                                    # input blocks
-        instanceBlock = ET.Element("block")             # start of main input block
-        instanceBlock.set("name", i)
-        instanceBlock.set("instance", "TODO")
-        instanceBlock.set("mode", "TODO")
+    clbNumber = 0
 
-        instanceInput = ET.Element("inputs")
-        inputPort = ET.Element("port")
-        inputPort.set("name", "TODO")
-        instanceInput.append(inputPort)
-        instanceBlock.append(instanceInput)
+    for clb in connectivity:
+        clbBlock = ET.Element("block")
+        clbBlock.set("name", "temp")
+        clbBlock.set("instance", f"clb[{clbNumber}]")
+        clbBlock.set("mode", "default")
 
-        instanceOutput = ET.Element("outputs")
-        outputPort = ET.Element("port")
-        outputPort.set("name", "TODO")
-        instanceOutput.append(outputPort)
-        instanceBlock.append(instanceOutput)
+        clbBlockInputs = ET.Element("inputs")
+        clbBlockInputsPort = ET.Element("port")
+        clbBlockInputsPort.set("name", "I")
 
-        instanceClocks = ET.Element("clocks")
-        blockPort = ET.Element("port")
-        blockPort.set("name", "TODO")
-        instanceBlock.append(instanceClocks)
+        clbBlockInputs.append(clbBlockInputsPort)
 
-        subBlock = ET.Element("block")                  # start of sub input block within the hierarchy
-        subBlock.set("name", i)
-        subBlock.set("instance", "TODO")
 
-        subInput = ET.Element("inputs")
-        subOutput = ET.Element("outputs")
-        subPortO = ET.Element("port")
-        subPortO.set("name", "TODO")
-        subOutput.append(subPortO)
-        subClocks = ET.Element("clocks")
+        clbBlockOutputs = ET.Element("outputs")
+        clbBlockOutputsPort = ET.Element("port")
+        clbBlockOutputsPort.set("name", "O")
 
-        subAttribute = ET.Element("attribute")
-        attribute = ET.Element("attribute")
-        attribute.set("name", "TODO")
-        subAttribute.append(attribute)
+        clbBlockOutputs.append(clbBlockInputsPort)
+        
+        clbBlockClocks = ET.Element("clocks")
+        clbBlockClocksPort = ET.Element("port")
+        clbBlockClocksPort.set("name", "clk")
+        clbBlockClocksPort.text = "pclk"
+        clbBlockClocks.append(clbBlockClocksPort)
 
-        subParameter = ET.Element("parameters")
-        parameter = ET.Element("parameter")
-        parameter.set("name", "TODO")
-        subParameter.append(parameter)
+        bleCount = 0
 
-        subBlock.append(subInput)
-        subBlock.append(subOutput)
-        subBlock.append(subClocks)
-        subBlock.append(subAttribute)
-        subBlock.append(subParameter)
+        for ble in clb:
+            bleBlock = ET.Element("block")
+            bleBlock.set("name", "")
+            bleBlock.set("instance", "ble[{bleCount}]")
+            bleBlock.set("mode", "default")
 
-        instanceBlock.append(subBlock)
+            bleBlockInputs = ET.Element("inputs")
+            bleBlockInputsPort = ET.Element("port")
+            bleBlockInputsPort.set("name", "in")
+            bleBlockInputs.append(bleBlockInputsPort)
 
-        root.append(instanceBlock)
+            bleBlockOutputs = ET.Element("outputs")
+            bleBlockOutputsPort = ET.Element("port")
+            bleBlockOutputsPort.set("name", "out")
+            bleBlockOutputsPort.text = "ff[0].Q[0]-&gt;direct4"
+            bleBlockOutputs.append(bleBlockOutputsPort)
 
-    for j in outputs:                                   # output blocks
-        instanceBlock = ET.Element("block")             # start of main output block
-        instanceBlock.set("name", j)
-        instanceBlock.set("instance", "TODO")
-        instanceBlock.set("mode", "TODO")
+            bleBlockClocks = ET.Element("clocks")
+            bleBlockClocksPort = ET.Element("port")
+            bleBlockClocksPort.set("name", "clk")
+            bleBlockClocksPort.text = "clb.clk[0]-&gt;clks"
+            bleBlockClocks.append(bleBlockClocksPort)
 
-        instanceInput = ET.Element("inputs")
-        inputPort = ET.Element("port")
-        inputPort.set("name", "TODO")
-        instanceInput.append(inputPort)
-        instanceBlock.append(instanceInput)
+            lutBlock = ET.Element("block")
 
-        instanceOutput = ET.Element("outputs")
-        outputPort = ET.Element("port")
-        outputPort.set("name", "TODO")
-        instanceOutput.append(outputPort)
-        instanceBlock.append(instanceOutput)
+            subLutBlock = ET.Element("block")
 
-        instanceClocks = ET.Element("clocks")
-        blockPort = ET.Element("port")
-        blockPort.set("name", "TODO")
-        instanceBlock.append(instanceClocks)
+            ffBlock = ET.Element("block")
 
-        subBlock = ET.Element("block")                  # start of sub output block within the hierarchy
-        subBlock.set("name", j)
-        subBlock.set("instance", "TODO")
+            bleCount += 1
 
-        subInput = ET.Element("inputs")
-        subOutput = ET.Element("outputs")
-        subPortO = ET.Element("port")
-        subPortO.set("name", "TODO")
-        subOutput.append(subPortO)
-        subClocks = ET.Element("clocks")
 
-        subAttribute = ET.Element("attribute")
-        attribute = ET.Element("attribute")
-        attribute.set("name", "TODO")
-        subAttribute.append(attribute)
-
-        subParameter = ET.Element("parameters")
-        parameter = ET.Element("parameter")
-        parameter.set("name", "TODO")
-        subParameter.append(parameter)
-
-        subBlock.append(subInput)
-        subBlock.append(subOutput)
-        subBlock.append(subClocks)
-        subBlock.append(subAttribute)
-        subBlock.append(subParameter)
-
-        instanceBlock.append(subBlock)
-
-        root.append(instanceBlock)
+        root.append(clbBlock)
+        clbNumber += 1
 
     tree = ET.ElementTree(root) 
       
     with open ("netlist.xml", "wb") as files:              # writes to netlist.xml
         tree.write(files)
 
-if __name__ == "__main__":  
-    inp = ["pa", "pb", "pc"]                                # adjust as needed
-    outp = ["out:pd", "out:pe", "out:pf", "out:pg"]         # adjust as needed
-    write_packing_results_to_xml(inp, outp)         
+if __name__ == "__main__":          # adjust as needed
+    write_packing_results_to_xml()         
     tree = ET.parse('netlist.xml')
     root = tree.getroot()
 
