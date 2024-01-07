@@ -33,19 +33,21 @@ def write_packing_results_to_xml():
 
     for clb in connectivity:
         clbBlock = ET.Element("block")
-        clbBlock.set("name", "temp")
+        clbBlock.set("name", "TODO")
         clbBlock.set("instance", f"clb[{clbNumber}]")
         clbBlock.set("mode", "default")
 
         clbBlockInputs = ET.Element("inputs")
         clbBlockInputsPort = ET.Element("port")
         clbBlockInputsPort.set("name", "I")
+        clbBlockInputsPort.text = "open " * (input_size - 1) + "open"
         clbBlockInputs.append(clbBlockInputsPort)
         clbBlock.append(clbBlockInputs)
 
         clbBlockOutputs = ET.Element("outputs")
         clbBlockOutputsPort = ET.Element("port")
         clbBlockOutputsPort.set("name", "O")
+        clbBlockOutputsPort.text = "open " * (output_size - 1) + "open"
         clbBlockOutputs.append(clbBlockOutputsPort)
         clbBlock.append(clbBlockOutputs)
         
@@ -60,13 +62,14 @@ def write_packing_results_to_xml():
 
         for ble in clb:
             bleBlock = ET.Element("block")
-            bleBlock.set("name", "temp")
+            bleBlock.set("name", "TODO")
             bleBlock.set("instance", f"ble[{bleCount}]")
             bleBlock.set("mode", "default")
 
             bleBlockInputs = ET.Element("inputs")
             bleBlockInputsPort = ET.Element("port")
             bleBlockInputsPort.set("name", "in")
+            bleBlockInputsPort.text = "open " * (input_size - 1) + "open"
             bleBlockInputs.append(bleBlockInputsPort)
             bleBlock.append(bleBlockInputs)
 
@@ -85,12 +88,13 @@ def write_packing_results_to_xml():
             bleBlock.append(bleBlockClocks)
 
             lutBlock = ET.Element("block")
-            lutBlock.set("name", "temp")
+            lutBlock.set("name", "TODO")
             lutBlock.set("instance", "lut_[0]")
             lutBlock.set("mode", "lut_")
             lutBlockInputs = ET.Element("inputs")
             lutBlockInputsPort = ET.Element("port")
             lutBlockInputsPort.set("name", "in")
+            lutBlockInputsPort.text = "open " * (input_size - 1) + "open"
             lutBlockInputs.append(lutBlockInputsPort)
             lutBlock.append(lutBlockInputs)
 
@@ -104,7 +108,7 @@ def write_packing_results_to_xml():
             lutBlock.append(lutBlockClocks)
 
             subLutBlock = ET.Element("block")
-            subLutBlock.set("name", "temp")
+            subLutBlock.set("name", "TODO")
             subLutBlock.set("instance", "lut[0]")
             subLutBlockAttributes = ET.Element("attributes")
             subLutBlockParameters = ET.Element("parameters")
@@ -114,8 +118,10 @@ def write_packing_results_to_xml():
             subLutBlockInputs = ET.Element("inputs")
             subLutBlockInputsPort = ET.Element("port")
             subLutBlockInputsPort.set("name", "in")
+            subLutBlockInputsPort.text = "open " * (input_size - 1) + "open"
             subLutBlockInputsPortRotation = ET.Element("port_rotation_map")
             subLutBlockInputsPortRotation.set("name", "in")
+            subLutBlockInputsPortRotation.text = "open " * (input_size - 1) + "open"
             subLutBlockInputs.append(subLutBlockInputsPort)
             subLutBlockInputs.append(subLutBlockInputsPortRotation)
             subLutBlock.append(subLutBlockInputs)
@@ -130,7 +136,7 @@ def write_packing_results_to_xml():
             subLutBlock.append(subLutBlockClocks)
 
             ffBlock = ET.Element("block")
-            ffBlock.set("name", "temp")
+            ffBlock.set("name", "TODO")
             ffBlock.set("instance", "ff[0]")
             ffBlockAttributes = ET.Element("attributes")
             ffBlockParameters = ET.Element("parameters")

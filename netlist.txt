@@ -3,19 +3,19 @@
 	<inputs>pclk</inputs>
 	<outputs/>
 	<clocks>pclk</clocks>
-	<block name="temp" instance="clb[0]" mode="default">
+	<block name="TODO" instance="clb[0]" mode="default">
 		<inputs>
-			<port name="I"/>
+			<port name="I">open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open</port>
 		</inputs>
 		<outputs>
-			<port name="O"/>
+			<port name="O">open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open</port>
 		</outputs>
 		<clocks>
 			<port name="clk">pclk</port>
 		</clocks>
-		<block name="temp" instance="ble[0]" mode="default">
+		<block name="TODO" instance="ble[0]" mode="default">
 			<inputs>
-				<port name="in"/>
+				<port name="in">open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open</port>
 			</inputs>
 			<outputs>
 				<port name="out">ff[0].Q[0]-&amp;gt;direct4</port>
@@ -23,20 +23,20 @@
 			<clocks>
 				<port name="clk">clb.clk[0]-&amp;gt;clks</port>
 			</clocks>
-			<block name="temp" instance="lut_[0]" mode="lut_">
+			<block name="TODO" instance="lut_[0]" mode="lut_">
 				<inputs>
-					<port name="in"/>
+					<port name="in">open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open</port>
 				</inputs>
 				<outputs>
 					<port name="out"/>
 				</outputs>
 				<clocks/>
-				<block name="temp" instance="lut[0]">
+				<block name="TODO" instance="lut[0]">
 					<attributes/>
 					<parameters/>
 					<inputs>
-						<port name="in"/>
-						<port_rotation_map name="in"/>
+						<port name="in">open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open</port>
+						<port_rotation_map name="in">open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open</port_rotation_map>
 					</inputs>
 					<outputs>
 						<port name="out"/>
@@ -44,7 +44,7 @@
 					<clocks/>
 				</block>
 			</block>
-			<block name="temp" instance="ff[0]">
+			<block name="TODO" instance="ff[0]">
 				<attributes/>
 				<parameters/>
 				<inputs>
@@ -58,9 +58,9 @@
 				</clocks>
 			</block>
 		</block>
-		<block name="temp" instance="ble[1]" mode="default">
+		<block name="TODO" instance="ble[1]" mode="default">
 			<inputs>
-				<port name="in"/>
+				<port name="in">open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open</port>
 			</inputs>
 			<outputs>
 				<port name="out">ff[0].Q[0]-&amp;gt;direct4</port>
@@ -68,20 +68,20 @@
 			<clocks>
 				<port name="clk">clb.clk[0]-&amp;gt;clks</port>
 			</clocks>
-			<block name="temp" instance="lut_[0]" mode="lut_">
+			<block name="TODO" instance="lut_[0]" mode="lut_">
 				<inputs>
-					<port name="in"/>
+					<port name="in">open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open</port>
 				</inputs>
 				<outputs>
 					<port name="out"/>
 				</outputs>
 				<clocks/>
-				<block name="temp" instance="lut[0]">
+				<block name="TODO" instance="lut[0]">
 					<attributes/>
 					<parameters/>
 					<inputs>
-						<port name="in"/>
-						<port_rotation_map name="in"/>
+						<port name="in">open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open</port>
+						<port_rotation_map name="in">open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open</port_rotation_map>
 					</inputs>
 					<outputs>
 						<port name="out"/>
@@ -89,7 +89,7 @@
 					<clocks/>
 				</block>
 			</block>
-			<block name="temp" instance="ff[0]">
+			<block name="TODO" instance="ff[0]">
 				<attributes/>
 				<parameters/>
 				<inputs>
@@ -103,9 +103,9 @@
 				</clocks>
 			</block>
 		</block>
-		<block name="temp" instance="ble[2]" mode="default">
+		<block name="TODO" instance="ble[2]" mode="default">
 			<inputs>
-				<port name="in"/>
+				<port name="in">open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open</port>
 			</inputs>
 			<outputs>
 				<port name="out">ff[0].Q[0]-&amp;gt;direct4</port>
@@ -113,20 +113,20 @@
 			<clocks>
 				<port name="clk">clb.clk[0]-&amp;gt;clks</port>
 			</clocks>
-			<block name="temp" instance="lut_[0]" mode="lut_">
+			<block name="TODO" instance="lut_[0]" mode="lut_">
 				<inputs>
-					<port name="in"/>
+					<port name="in">open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open</port>
 				</inputs>
 				<outputs>
 					<port name="out"/>
 				</outputs>
 				<clocks/>
-				<block name="temp" instance="lut[0]">
+				<block name="TODO" instance="lut[0]">
 					<attributes/>
 					<parameters/>
 					<inputs>
-						<port name="in"/>
-						<port_rotation_map name="in"/>
+						<port name="in">open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open</port>
+						<port_rotation_map name="in">open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open</port_rotation_map>
 					</inputs>
 					<outputs>
 						<port name="out"/>
@@ -134,7 +134,7 @@
 					<clocks/>
 				</block>
 			</block>
-			<block name="temp" instance="ff[0]">
+			<block name="TODO" instance="ff[0]">
 				<attributes/>
 				<parameters/>
 				<inputs>
@@ -149,19 +149,19 @@
 			</block>
 		</block>
 	</block>
-	<block name="temp" instance="clb[1]" mode="default">
+	<block name="TODO" instance="clb[1]" mode="default">
 		<inputs>
-			<port name="I"/>
+			<port name="I">open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open</port>
 		</inputs>
 		<outputs>
-			<port name="O"/>
+			<port name="O">open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open</port>
 		</outputs>
 		<clocks>
 			<port name="clk">pclk</port>
 		</clocks>
-		<block name="temp" instance="ble[0]" mode="default">
+		<block name="TODO" instance="ble[0]" mode="default">
 			<inputs>
-				<port name="in"/>
+				<port name="in">open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open</port>
 			</inputs>
 			<outputs>
 				<port name="out">ff[0].Q[0]-&amp;gt;direct4</port>
@@ -169,20 +169,20 @@
 			<clocks>
 				<port name="clk">clb.clk[0]-&amp;gt;clks</port>
 			</clocks>
-			<block name="temp" instance="lut_[0]" mode="lut_">
+			<block name="TODO" instance="lut_[0]" mode="lut_">
 				<inputs>
-					<port name="in"/>
+					<port name="in">open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open</port>
 				</inputs>
 				<outputs>
 					<port name="out"/>
 				</outputs>
 				<clocks/>
-				<block name="temp" instance="lut[0]">
+				<block name="TODO" instance="lut[0]">
 					<attributes/>
 					<parameters/>
 					<inputs>
-						<port name="in"/>
-						<port_rotation_map name="in"/>
+						<port name="in">open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open</port>
+						<port_rotation_map name="in">open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open</port_rotation_map>
 					</inputs>
 					<outputs>
 						<port name="out"/>
@@ -190,7 +190,7 @@
 					<clocks/>
 				</block>
 			</block>
-			<block name="temp" instance="ff[0]">
+			<block name="TODO" instance="ff[0]">
 				<attributes/>
 				<parameters/>
 				<inputs>
@@ -204,9 +204,9 @@
 				</clocks>
 			</block>
 		</block>
-		<block name="temp" instance="ble[1]" mode="default">
+		<block name="TODO" instance="ble[1]" mode="default">
 			<inputs>
-				<port name="in"/>
+				<port name="in">open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open</port>
 			</inputs>
 			<outputs>
 				<port name="out">ff[0].Q[0]-&amp;gt;direct4</port>
@@ -214,20 +214,20 @@
 			<clocks>
 				<port name="clk">clb.clk[0]-&amp;gt;clks</port>
 			</clocks>
-			<block name="temp" instance="lut_[0]" mode="lut_">
+			<block name="TODO" instance="lut_[0]" mode="lut_">
 				<inputs>
-					<port name="in"/>
+					<port name="in">open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open</port>
 				</inputs>
 				<outputs>
 					<port name="out"/>
 				</outputs>
 				<clocks/>
-				<block name="temp" instance="lut[0]">
+				<block name="TODO" instance="lut[0]">
 					<attributes/>
 					<parameters/>
 					<inputs>
-						<port name="in"/>
-						<port_rotation_map name="in"/>
+						<port name="in">open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open</port>
+						<port_rotation_map name="in">open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open</port_rotation_map>
 					</inputs>
 					<outputs>
 						<port name="out"/>
@@ -235,7 +235,7 @@
 					<clocks/>
 				</block>
 			</block>
-			<block name="temp" instance="ff[0]">
+			<block name="TODO" instance="ff[0]">
 				<attributes/>
 				<parameters/>
 				<inputs>
@@ -249,9 +249,9 @@
 				</clocks>
 			</block>
 		</block>
-		<block name="temp" instance="ble[2]" mode="default">
+		<block name="TODO" instance="ble[2]" mode="default">
 			<inputs>
-				<port name="in"/>
+				<port name="in">open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open</port>
 			</inputs>
 			<outputs>
 				<port name="out">ff[0].Q[0]-&amp;gt;direct4</port>
@@ -259,20 +259,20 @@
 			<clocks>
 				<port name="clk">clb.clk[0]-&amp;gt;clks</port>
 			</clocks>
-			<block name="temp" instance="lut_[0]" mode="lut_">
+			<block name="TODO" instance="lut_[0]" mode="lut_">
 				<inputs>
-					<port name="in"/>
+					<port name="in">open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open</port>
 				</inputs>
 				<outputs>
 					<port name="out"/>
 				</outputs>
 				<clocks/>
-				<block name="temp" instance="lut[0]">
+				<block name="TODO" instance="lut[0]">
 					<attributes/>
 					<parameters/>
 					<inputs>
-						<port name="in"/>
-						<port_rotation_map name="in"/>
+						<port name="in">open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open</port>
+						<port_rotation_map name="in">open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open</port_rotation_map>
 					</inputs>
 					<outputs>
 						<port name="out"/>
@@ -280,7 +280,7 @@
 					<clocks/>
 				</block>
 			</block>
-			<block name="temp" instance="ff[0]">
+			<block name="TODO" instance="ff[0]">
 				<attributes/>
 				<parameters/>
 				<inputs>
@@ -295,19 +295,19 @@
 			</block>
 		</block>
 	</block>
-	<block name="temp" instance="clb[2]" mode="default">
+	<block name="TODO" instance="clb[2]" mode="default">
 		<inputs>
-			<port name="I"/>
+			<port name="I">open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open</port>
 		</inputs>
 		<outputs>
-			<port name="O"/>
+			<port name="O">open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open</port>
 		</outputs>
 		<clocks>
 			<port name="clk">pclk</port>
 		</clocks>
-		<block name="temp" instance="ble[0]" mode="default">
+		<block name="TODO" instance="ble[0]" mode="default">
 			<inputs>
-				<port name="in"/>
+				<port name="in">open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open</port>
 			</inputs>
 			<outputs>
 				<port name="out">ff[0].Q[0]-&amp;gt;direct4</port>
@@ -315,20 +315,20 @@
 			<clocks>
 				<port name="clk">clb.clk[0]-&amp;gt;clks</port>
 			</clocks>
-			<block name="temp" instance="lut_[0]" mode="lut_">
+			<block name="TODO" instance="lut_[0]" mode="lut_">
 				<inputs>
-					<port name="in"/>
+					<port name="in">open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open</port>
 				</inputs>
 				<outputs>
 					<port name="out"/>
 				</outputs>
 				<clocks/>
-				<block name="temp" instance="lut[0]">
+				<block name="TODO" instance="lut[0]">
 					<attributes/>
 					<parameters/>
 					<inputs>
-						<port name="in"/>
-						<port_rotation_map name="in"/>
+						<port name="in">open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open</port>
+						<port_rotation_map name="in">open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open</port_rotation_map>
 					</inputs>
 					<outputs>
 						<port name="out"/>
@@ -336,7 +336,7 @@
 					<clocks/>
 				</block>
 			</block>
-			<block name="temp" instance="ff[0]">
+			<block name="TODO" instance="ff[0]">
 				<attributes/>
 				<parameters/>
 				<inputs>
@@ -350,9 +350,9 @@
 				</clocks>
 			</block>
 		</block>
-		<block name="temp" instance="ble[1]" mode="default">
+		<block name="TODO" instance="ble[1]" mode="default">
 			<inputs>
-				<port name="in"/>
+				<port name="in">open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open</port>
 			</inputs>
 			<outputs>
 				<port name="out">ff[0].Q[0]-&amp;gt;direct4</port>
@@ -360,20 +360,20 @@
 			<clocks>
 				<port name="clk">clb.clk[0]-&amp;gt;clks</port>
 			</clocks>
-			<block name="temp" instance="lut_[0]" mode="lut_">
+			<block name="TODO" instance="lut_[0]" mode="lut_">
 				<inputs>
-					<port name="in"/>
+					<port name="in">open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open</port>
 				</inputs>
 				<outputs>
 					<port name="out"/>
 				</outputs>
 				<clocks/>
-				<block name="temp" instance="lut[0]">
+				<block name="TODO" instance="lut[0]">
 					<attributes/>
 					<parameters/>
 					<inputs>
-						<port name="in"/>
-						<port_rotation_map name="in"/>
+						<port name="in">open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open</port>
+						<port_rotation_map name="in">open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open</port_rotation_map>
 					</inputs>
 					<outputs>
 						<port name="out"/>
@@ -381,7 +381,7 @@
 					<clocks/>
 				</block>
 			</block>
-			<block name="temp" instance="ff[0]">
+			<block name="TODO" instance="ff[0]">
 				<attributes/>
 				<parameters/>
 				<inputs>
@@ -395,9 +395,9 @@
 				</clocks>
 			</block>
 		</block>
-		<block name="temp" instance="ble[2]" mode="default">
+		<block name="TODO" instance="ble[2]" mode="default">
 			<inputs>
-				<port name="in"/>
+				<port name="in">open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open</port>
 			</inputs>
 			<outputs>
 				<port name="out">ff[0].Q[0]-&amp;gt;direct4</port>
@@ -405,20 +405,20 @@
 			<clocks>
 				<port name="clk">clb.clk[0]-&amp;gt;clks</port>
 			</clocks>
-			<block name="temp" instance="lut_[0]" mode="lut_">
+			<block name="TODO" instance="lut_[0]" mode="lut_">
 				<inputs>
-					<port name="in"/>
+					<port name="in">open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open</port>
 				</inputs>
 				<outputs>
 					<port name="out"/>
 				</outputs>
 				<clocks/>
-				<block name="temp" instance="lut[0]">
+				<block name="TODO" instance="lut[0]">
 					<attributes/>
 					<parameters/>
 					<inputs>
-						<port name="in"/>
-						<port_rotation_map name="in"/>
+						<port name="in">open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open</port>
+						<port_rotation_map name="in">open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open</port_rotation_map>
 					</inputs>
 					<outputs>
 						<port name="out"/>
@@ -426,7 +426,7 @@
 					<clocks/>
 				</block>
 			</block>
-			<block name="temp" instance="ff[0]">
+			<block name="TODO" instance="ff[0]">
 				<attributes/>
 				<parameters/>
 				<inputs>
