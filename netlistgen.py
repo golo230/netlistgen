@@ -17,6 +17,7 @@ def write_packing_results_to_xml():
     root.set("name", "b1.net")
     root.set("instance", "FPGA_packed_netlist[0]")
     root.set("architecture_id", "TODO")
+    root.set("atom_netlist_id", "TODO")
 
     topInputs = ET.Element("inputs")
     topInputs.text = "pclk"
@@ -88,9 +89,9 @@ def write_packing_results_to_xml():
             bleBlock.append(bleBlockClocks)
 
             lutBlock = ET.Element("block")
-            lutBlock.set("name", "TODO")
+            lutBlock.set("name", f"lut_{input_size}[0]")
             lutBlock.set("instance", "lut_[0]")
-            lutBlock.set("mode", "lut_")
+            lutBlock.set("mode", f"lut_{input_size}")
             lutBlockInputs = ET.Element("inputs")
             lutBlockInputsPort = ET.Element("port")
             lutBlockInputsPort.set("name", "in")
@@ -101,6 +102,7 @@ def write_packing_results_to_xml():
             lutBlockOutputs = ET.Element("outputs")
             lutBlockOutputsPort = ET.Element("port")
             lutBlockOutputsPort.set("name", "out")
+            lutBlockOutputsPort.text = f"lut[0].out[0]-&gt;direct:lut_{input_size}"
             lutBlockOutputs.append(lutBlockOutputsPort)
             lutBlock.append(lutBlockOutputs)
 
@@ -146,6 +148,7 @@ def write_packing_results_to_xml():
             ffBlockInputs = ET.Element("inputs")
             ffBlockInputsPort = ET.Element("port")
             ffBlockInputsPort.set("name", "D")
+            ffBlockInputsPort.text = f"lut_{input_size}[0].out[0]-&gt;direct2"
             ffBlockInputs.append(ffBlockInputsPort)
             ffBlock.append(ffBlockInputs)
 

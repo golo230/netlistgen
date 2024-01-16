@@ -1,5 +1,5 @@
 <?xml version="1.0" ?>
-<block name="b1.net" instance="FPGA_packed_netlist[0]" architecture_id="TODO">
+<block name="b1.net" instance="FPGA_packed_netlist[0]" architecture_id="TODO" atom_netlist_id="TODO">
 	<inputs>pclk</inputs>
 	<outputs/>
 	<clocks>pclk</clocks>
@@ -23,12 +23,12 @@
 			<clocks>
 				<port name="clk">clb.clk[0]-&amp;gt;clks</port>
 			</clocks>
-			<block name="TODO" instance="lut_[0]" mode="lut_">
+			<block name="lut_144[0]" instance="lut_[0]" mode="lut_144">
 				<inputs>
 					<port name="in">open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open</port>
 				</inputs>
 				<outputs>
-					<port name="out"/>
+					<port name="out">lut[0].out[0]-&amp;gt;direct:lut_144</port>
 				</outputs>
 				<clocks/>
 				<block name="TODO" instance="lut[0]">
@@ -48,7 +48,7 @@
 				<attributes/>
 				<parameters/>
 				<inputs>
-					<port name="D"/>
+					<port name="D">lut_144[0].out[0]-&amp;gt;direct2</port>
 				</inputs>
 				<outputs>
 					<port name="Q"/>
@@ -68,12 +68,12 @@
 			<clocks>
 				<port name="clk">clb.clk[0]-&amp;gt;clks</port>
 			</clocks>
-			<block name="TODO" instance="lut_[0]" mode="lut_">
+			<block name="lut_144[0]" instance="lut_[0]" mode="lut_144">
 				<inputs>
 					<port name="in">open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open</port>
 				</inputs>
 				<outputs>
-					<port name="out"/>
+					<port name="out">lut[0].out[0]-&amp;gt;direct:lut_144</port>
 				</outputs>
 				<clocks/>
 				<block name="TODO" instance="lut[0]">
@@ -93,7 +93,7 @@
 				<attributes/>
 				<parameters/>
 				<inputs>
-					<port name="D"/>
+					<port name="D">lut_144[0].out[0]-&amp;gt;direct2</port>
 				</inputs>
 				<outputs>
 					<port name="Q"/>
@@ -113,12 +113,12 @@
 			<clocks>
 				<port name="clk">clb.clk[0]-&amp;gt;clks</port>
 			</clocks>
-			<block name="TODO" instance="lut_[0]" mode="lut_">
+			<block name="lut_144[0]" instance="lut_[0]" mode="lut_144">
 				<inputs>
 					<port name="in">open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open</port>
 				</inputs>
 				<outputs>
-					<port name="out"/>
+					<port name="out">lut[0].out[0]-&amp;gt;direct:lut_144</port>
 				</outputs>
 				<clocks/>
 				<block name="TODO" instance="lut[0]">
@@ -138,7 +138,7 @@
 				<attributes/>
 				<parameters/>
 				<inputs>
-					<port name="D"/>
+					<port name="D">lut_144[0].out[0]-&amp;gt;direct2</port>
 				</inputs>
 				<outputs>
 					<port name="Q"/>
@@ -169,12 +169,12 @@
 			<clocks>
 				<port name="clk">clb.clk[0]-&amp;gt;clks</port>
 			</clocks>
-			<block name="TODO" instance="lut_[0]" mode="lut_">
+			<block name="lut_144[0]" instance="lut_[0]" mode="lut_144">
 				<inputs>
 					<port name="in">open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open</port>
 				</inputs>
 				<outputs>
-					<port name="out"/>
+					<port name="out">lut[0].out[0]-&amp;gt;direct:lut_144</port>
 				</outputs>
 				<clocks/>
 				<block name="TODO" instance="lut[0]">
@@ -194,7 +194,7 @@
 				<attributes/>
 				<parameters/>
 				<inputs>
-					<port name="D"/>
+					<port name="D">lut_144[0].out[0]-&amp;gt;direct2</port>
 				</inputs>
 				<outputs>
 					<port name="Q"/>
@@ -214,12 +214,12 @@
 			<clocks>
 				<port name="clk">clb.clk[0]-&amp;gt;clks</port>
 			</clocks>
-			<block name="TODO" instance="lut_[0]" mode="lut_">
+			<block name="lut_144[0]" instance="lut_[0]" mode="lut_144">
 				<inputs>
 					<port name="in">open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open</port>
 				</inputs>
 				<outputs>
-					<port name="out"/>
+					<port name="out">lut[0].out[0]-&amp;gt;direct:lut_144</port>
 				</outputs>
 				<clocks/>
 				<block name="TODO" instance="lut[0]">
@@ -239,7 +239,7 @@
 				<attributes/>
 				<parameters/>
 				<inputs>
-					<port name="D"/>
+					<port name="D">lut_144[0].out[0]-&amp;gt;direct2</port>
 				</inputs>
 				<outputs>
 					<port name="Q"/>
@@ -259,12 +259,12 @@
 			<clocks>
 				<port name="clk">clb.clk[0]-&amp;gt;clks</port>
 			</clocks>
-			<block name="TODO" instance="lut_[0]" mode="lut_">
+			<block name="lut_144[0]" instance="lut_[0]" mode="lut_144">
 				<inputs>
 					<port name="in">open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open</port>
 				</inputs>
 				<outputs>
-					<port name="out"/>
+					<port name="out">lut[0].out[0]-&amp;gt;direct:lut_144</port>
 				</outputs>
 				<clocks/>
 				<block name="TODO" instance="lut[0]">
@@ -284,7 +284,7 @@
 				<attributes/>
 				<parameters/>
 				<inputs>
-					<port name="D"/>
+					<port name="D">lut_144[0].out[0]-&amp;gt;direct2</port>
 				</inputs>
 				<outputs>
 					<port name="Q"/>
@@ -315,12 +315,12 @@
 			<clocks>
 				<port name="clk">clb.clk[0]-&amp;gt;clks</port>
 			</clocks>
-			<block name="TODO" instance="lut_[0]" mode="lut_">
+			<block name="lut_144[0]" instance="lut_[0]" mode="lut_144">
 				<inputs>
 					<port name="in">open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open</port>
 				</inputs>
 				<outputs>
-					<port name="out"/>
+					<port name="out">lut[0].out[0]-&amp;gt;direct:lut_144</port>
 				</outputs>
 				<clocks/>
 				<block name="TODO" instance="lut[0]">
@@ -340,7 +340,7 @@
 				<attributes/>
 				<parameters/>
 				<inputs>
-					<port name="D"/>
+					<port name="D">lut_144[0].out[0]-&amp;gt;direct2</port>
 				</inputs>
 				<outputs>
 					<port name="Q"/>
@@ -360,12 +360,12 @@
 			<clocks>
 				<port name="clk">clb.clk[0]-&amp;gt;clks</port>
 			</clocks>
-			<block name="TODO" instance="lut_[0]" mode="lut_">
+			<block name="lut_144[0]" instance="lut_[0]" mode="lut_144">
 				<inputs>
 					<port name="in">open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open</port>
 				</inputs>
 				<outputs>
-					<port name="out"/>
+					<port name="out">lut[0].out[0]-&amp;gt;direct:lut_144</port>
 				</outputs>
 				<clocks/>
 				<block name="TODO" instance="lut[0]">
@@ -385,7 +385,7 @@
 				<attributes/>
 				<parameters/>
 				<inputs>
-					<port name="D"/>
+					<port name="D">lut_144[0].out[0]-&amp;gt;direct2</port>
 				</inputs>
 				<outputs>
 					<port name="Q"/>
@@ -405,12 +405,12 @@
 			<clocks>
 				<port name="clk">clb.clk[0]-&amp;gt;clks</port>
 			</clocks>
-			<block name="TODO" instance="lut_[0]" mode="lut_">
+			<block name="lut_144[0]" instance="lut_[0]" mode="lut_144">
 				<inputs>
 					<port name="in">open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open</port>
 				</inputs>
 				<outputs>
-					<port name="out"/>
+					<port name="out">lut[0].out[0]-&amp;gt;direct:lut_144</port>
 				</outputs>
 				<clocks/>
 				<block name="TODO" instance="lut[0]">
@@ -430,7 +430,7 @@
 				<attributes/>
 				<parameters/>
 				<inputs>
-					<port name="D"/>
+					<port name="D">lut_144[0].out[0]-&amp;gt;direct2</port>
 				</inputs>
 				<outputs>
 					<port name="Q"/>
