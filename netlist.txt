@@ -15,7 +15,7 @@
 		</clocks>
 		<block name="TODO" instance="ble[0]" mode="default">
 			<inputs>
-				<port name="in">clb.I[0]-\&amp;gt;crossbar clb.I[2]-\&amp;gt;crossbar clb.I[3]-\&amp;gt;crossbar open</port>
+				<port name="in">clb.I[0]-&amp;gt;crossbar clb.I[2]-&amp;gt;crossbar clb.I[3]-&amp;gt;crossbar open</port>
 			</inputs>
 			<outputs>
 				<port name="out">ff[0].Q[0]-&amp;gt;direct4</port>
@@ -60,7 +60,7 @@
 		</block>
 		<block name="TODO" instance="ble[1]" mode="default">
 			<inputs>
-				<port name="in">clb.I[1]-\&amp;gt;crossbar clb.I[2]-\&amp;gt;crossbar clb.I[3]-\&amp;gt;crossbar open</port>
+				<port name="in">clb.I[1]-&amp;gt;crossbar clb.I[2]-&amp;gt;crossbar clb.I[3]-&amp;gt;crossbar open</port>
 			</inputs>
 			<outputs>
 				<port name="out">ff[0].Q[0]-&amp;gt;direct4</port>
@@ -116,7 +116,7 @@
 		</clocks>
 		<block name="TODO" instance="ble[0]" mode="default">
 			<inputs>
-				<port name="in">clb.I[0]-\&amp;gt;crossbar clb.I[1]-\&amp;gt;crossbar clb.I[3]-\&amp;gt;crossbar open</port>
+				<port name="in">clb.I[0]-&amp;gt;crossbar clb.I[1]-&amp;gt;crossbar clb.I[3]-&amp;gt;crossbar open</port>
 			</inputs>
 			<outputs>
 				<port name="out">ff[0].Q[0]-&amp;gt;direct4</port>
@@ -161,7 +161,7 @@
 		</block>
 		<block name="TODO" instance="ble[1]" mode="default">
 			<inputs>
-				<port name="in">clb.I[0]-\&amp;gt;crossbar clb.I[1]-\&amp;gt;crossbar clb.I[2]-\&amp;gt;crossbar open</port>
+				<port name="in">clb.I[0]-&amp;gt;crossbar clb.I[1]-&amp;gt;crossbar clb.I[2]-&amp;gt;crossbar open</port>
 			</inputs>
 			<outputs>
 				<port name="out">ff[0].Q[0]-&amp;gt;direct4</port>
