@@ -5,12 +5,10 @@ import xml.dom.minidom
 # LINELENGTH = 1024
 # TAB_LENGTH = 4
 
-input_size = 144
-output_size = 44
-connectivity = [[1,2,3],
-                [4,5,6],
-                [7,8,9]
-                ]
+input_size = 4
+output_size = 2
+connectivity = [[(3, [0, 2, 3]), (2, [1, 2, 3])],
+ [(1, [0, 1, 3]), (0, [0, 1, 2])]]
 
 def write_packing_results_to_xml():
     root = ET.Element("block")                          # top block
@@ -41,7 +39,29 @@ def write_packing_results_to_xml():
         clbBlockInputs = ET.Element("inputs")
         clbBlockInputsPort = ET.Element("port")
         clbBlockInputsPort.set("name", "I")
-        clbBlockInputsPort.text = "open " * (input_size - 1) + "open"
+        # clbBlockInputsPort.text = "open " * (input_size - 1) + "open"
+
+        clbBlockInputsPortText = []
+        for blei in clb:
+            clbBlockInputsPortText = clbBlockInputsPortText + blei[1]
+            clbBlockInputsPortText.sort()
+            tempSet = set(clbBlockInputsPortText)
+            finalList = list(tempSet)
+
+        finalCLBText = ""
+
+        for i in range(input_size - 1):
+            if i < len(finalList) - 1:
+                finalCLBText = finalCLBText + "_x" + str(finalList[i]) + " "
+            else:
+                finalCLBText = finalCLBText + "open "
+        if len(finalList) == input_size:
+            finalCLBText = finalCLBText + "_x" + str(finalList[input_size - 1])
+        else:
+            finalCLBText = finalCLBText + "open"
+
+        clbBlockInputsPort.text = finalCLBText
+
         clbBlockInputs.append(clbBlockInputsPort)
         clbBlock.append(clbBlockInputs)
 
@@ -70,7 +90,23 @@ def write_packing_results_to_xml():
             bleBlockInputs = ET.Element("inputs")
             bleBlockInputsPort = ET.Element("port")
             bleBlockInputsPort.set("name", "in")
-            bleBlockInputsPort.text = "open " * (input_size - 1) + "open"
+            # bleBlockInputsPort.text = "open " * (input_size - 1) + "open"
+
+            bleInputList = ble[1]
+            bleInputText = ""
+
+            for i in bleInputList:
+                for j in range(len(finalList)):
+                    if finalList[j] == i:
+                        bleInputText = bleInputText + f"clb.I[{j}]-&gt;crossbar "
+                        break
+
+            while len(bleInputList) < input_size - 1:
+                bleInputText = bleInputText + "open "
+
+            bleInputText = bleInputText + "open"
+            bleBlockInputsPort.text = bleInputText
+
             bleBlockInputs.append(bleBlockInputsPort)
             bleBlock.append(bleBlockInputs)
 
@@ -90,12 +126,29 @@ def write_packing_results_to_xml():
 
             lutBlock = ET.Element("block")
             lutBlock.set("name", f"lut_{input_size}[0]")
-            lutBlock.set("instance", "lut_[0]")
+            lutBlock.set("instance", f"lut_{input_size}[0]")
             lutBlock.set("mode", f"lut_{input_size}")
             lutBlockInputs = ET.Element("inputs")
             lutBlockInputsPort = ET.Element("port")
             lutBlockInputsPort.set("name", "in")
-            lutBlockInputsPort.text = "open " * (input_size - 1) + "open"
+            # lutBlockInputsPort.text = "open " * (input_size - 1) + "open"
+            
+            lutBlockText = ""
+            tempList2 = bleInputText.split()
+
+            for i in range(len(tempList2) - 1):
+                if tempList2[i] != "open":
+                    lutBlockText = lutBlockText + f"ble.in[{i}]-&gt;direct1 "
+                else:
+                    lutBlockText = "open "
+
+            while len(tempList2) < input_size - 1:
+                lutBlockText = lutBlockText + "open "
+
+            lutBlockText = lutBlockText + "open"
+
+            lutBlockInputsPort.text = lutBlockText
+            
             lutBlockInputs.append(lutBlockInputsPort)
             lutBlock.append(lutBlockInputs)
 
@@ -120,10 +173,49 @@ def write_packing_results_to_xml():
             subLutBlockInputs = ET.Element("inputs")
             subLutBlockInputsPort = ET.Element("port")
             subLutBlockInputsPort.set("name", "in")
-            subLutBlockInputsPort.text = "open " * (input_size - 1) + "open"
+            # subLutBlockInputsPort.text = "open " * (input_size - 1) + "open"
+
+            subLutBlockText = ""
+            tempList3 = lutBlockText.split()
+
+            for i in range(len(tempList3) - 1):
+                if tempList3[i] != "open":
+                    subLutBlockText = subLutBlockText + f"lut_{input_size}.in[{i}]-&gt;lut_{input_size} "
+                else:
+                    subLutBlockText = "open "
+
+            while len(tempList3) < input_size - 1:
+                subLutBlockText = subLutBlockText + "open "
+
+            subLutBlockText = subLutBlockText + "open"
+
+            subLutBlockInputsPort.text = subLutBlockText
+
             subLutBlockInputsPortRotation = ET.Element("port_rotation_map")
             subLutBlockInputsPortRotation.set("name", "in")
-            subLutBlockInputsPortRotation.text = "open " * (input_size - 1) + "open"
+
+            subLutBlockText2 = ""
+            tempList4 = lutBlockText.split()
+            count = 2
+
+            for i in range(len(tempList4) - 1):
+                if tempList4[i] != "open":
+                    subLutBlockText2 = subLutBlockText2 + f"{count} "
+                    count = count - 1
+                else:
+                    subLutBlockText2 = "open "
+
+                if count < 0:
+                    break
+
+            while len(tempList3) < input_size - 1:
+                subLutBlockText2 = subLutBlockText2 + "open "
+
+            subLutBlockText2 = subLutBlockText2 + "open"
+
+            subLutBlockInputsPortRotation.text = subLutBlockText2
+
+            # subLutBlockInputsPortRotation.text = "open " * (input_size - 1) + "open"
             subLutBlockInputs.append(subLutBlockInputsPort)
             subLutBlockInputs.append(subLutBlockInputsPortRotation)
             subLutBlock.append(subLutBlockInputs)
