@@ -35,7 +35,7 @@
 					<attributes/>
 					<parameters/>
 					<inputs>
-						<port name="in">lut_4.in[0]-&gt;lut_4 lut_4.in[1]-&gt;lut_4 lut_4.in[2]-&gt;lut_4 open</port>
+						<port name="in">lut_4.in[0]-&gt;direct:lut_4 lut_4.in[1]-&gt;direct:lut_4 lut_4.in[2]-&gt;direct:lut_4 open</port>
 						<port_rotation_map name="in">2 1 0 open</port_rotation_map>
 					</inputs>
 					<outputs>
@@ -80,7 +80,7 @@
 					<attributes/>
 					<parameters/>
 					<inputs>
-						<port name="in">lut_4.in[0]-&gt;lut_4 lut_4.in[1]-&gt;lut_4 lut_4.in[2]-&gt;lut_4 open</port>
+						<port name="in">lut_4.in[0]-&gt;direct:lut_4 lut_4.in[1]-&gt;direct:lut_4 lut_4.in[2]-&gt;direct:lut_4 open</port>
 						<port_rotation_map name="in">2 1 0 open</port_rotation_map>
 					</inputs>
 					<outputs>
@@ -136,7 +136,7 @@
 					<attributes/>
 					<parameters/>
 					<inputs>
-						<port name="in">lut_4.in[0]-&gt;lut_4 lut_4.in[1]-&gt;lut_4 lut_4.in[2]-&gt;lut_4 open</port>
+						<port name="in">lut_4.in[0]-&gt;direct:lut_4 lut_4.in[1]-&gt;direct:lut_4 lut_4.in[2]-&gt;direct:lut_4 open</port>
 						<port_rotation_map name="in">2 1 0 open</port_rotation_map>
 					</inputs>
 					<outputs>
@@ -181,7 +181,7 @@
 					<attributes/>
 					<parameters/>
 					<inputs>
-						<port name="in">lut_4.in[0]-&gt;lut_4 lut_4.in[1]-&gt;lut_4 lut_4.in[2]-&gt;lut_4 open</port>
+						<port name="in">lut_4.in[0]-&gt;direct:lut_4 lut_4.in[1]-&gt;direct:lut_4 lut_4.in[2]-&gt;direct:lut_4 open</port>
 						<port_rotation_map name="in">2 1 0 open</port_rotation_map>
 					</inputs>
 					<outputs>

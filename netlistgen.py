@@ -219,7 +219,7 @@ def write_packing_results_to_xml():
 
             subLutBlockText = ""
             for l in range(len(bleInputList)):
-                subLutBlockText += f"lut_{input_size}.in[{l}]->lut_{input_size} "
+                subLutBlockText += f"lut_{input_size}.in[{l}]->direct:lut_{input_size} "
             
             if len(bleInputList) == input_size:
                 subLutBlockText = subLutBlockText[:-1]
