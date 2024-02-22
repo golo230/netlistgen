@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <block name="b1.net" instance="FPGA_packed_netlist[0]" architecture_id="SHA256:TODO" atom_netlist_id="SHA256:TODO">
 	<inputs>pclk</inputs>
-	<outputs/>
+	<outputs>out:_x1</outputs>
 	<clocks>pclk</clocks>
 	<block name="_l3" instance="clb[0]" mode="default">
 		<inputs>
@@ -203,6 +203,46 @@
 					<port name="clk">ble.clk[0]-&gt;direct3</port>
 				</clocks>
 			</block>
+		</block>
+	</block>
+	<block name="out:_x1" instance="io[2]" mode="outpad">
+		<inputs>
+			<port name="outpad">_x1</port>
+		</inputs>
+		<outputs>
+			<port name="inpad">open</port>
+		</outputs>
+		<clocks>
+			<port name="clock">open</port>
+		</clocks>
+		<block name="out:_x1" instance="outpad[0]">
+			<attributes/>
+			<parameters/>
+			<inputs>
+				<port name="outpad">io.outpad[0]-&gt;outpad</port>
+			</inputs>
+			<outputs/>
+			<clocks/>
+		</block>
+	</block>
+	<block name="pclk" instance="io[3]" mode="inpad">
+		<inputs>
+			<port name="outpad">open</port>
+		</inputs>
+		<outputs>
+			<port name="inpad">inpad[0].inpad[0]-&gt;inpad</port>
+		</outputs>
+		<clocks>
+			<port name="clock">open</port>
+		</clocks>
+		<block name="pclk" instance="inpad[0]">
+			<attributes/>
+			<parameters/>
+			<inputs/>
+			<outputs>
+				<port name="inpad">pclk</port>
+			</outputs>
+			<clocks/>
 		</block>
 	</block>
 </block>

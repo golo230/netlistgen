@@ -22,8 +22,6 @@ for clbT in temp_connectivity:
         temp1.append((bleT[0] + 1, [x + 1 for x in bleT[1]]))
     connectivity.append(temp1)
 
-# print(connectivity)
-
 outgoing = []
 for clbO in connectivity:
     temp2 = [bleO[0] for bleO in clbO]
@@ -42,8 +40,6 @@ for q1 in range(len(outgoing)):
 
     outgoing2.append(temp3)
 
-# print(outgoing2)
-
 """
 [[(4, [1, 3, 4]), (3, [2, 3, 4])],
  [(2, [1, 2, 4]), (1, [1, 2, 3])]]
@@ -61,6 +57,7 @@ def write_packing_results_to_xml():
     root.append(topInputs)
 
     topOutputs = ET.Element("outputs")
+    topOutputs.text = "out:_x1"
     root.append(topOutputs)
 
     topClocks = ET.Element("clocks")
@@ -295,6 +292,98 @@ def write_packing_results_to_xml():
 
         root.append(clbBlock)
         clbNumber += 1
+
+    outpadBlock = ET.Element("block")
+    outpadBlock.set("name", "out:_x1")
+    outpadBlock.set("instance", "io[2]")
+    outpadBlock.set("mode", "outpad")
+
+    outpadBlockInputs = ET.Element("inputs")
+    outpadBlockInputsPort = ET.Element("port")
+    outpadBlockInputsPort.set("name", "outpad")
+    outpadBlockInputsPort.text = "_x1"
+    outpadBlockInputs.append(outpadBlockInputsPort)
+    outpadBlockOutputs = ET.Element("outputs")
+    outpadBlockOutputsPort = ET.Element("port")
+    outpadBlockOutputsPort.set("name", "inpad")
+    outpadBlockOutputsPort.text = "open"
+    outpadBlockOutputs.append(outpadBlockOutputsPort)
+    outpadBlockClocks = ET.Element("clocks")
+    outpadBlockClocksPort = ET.Element("port")
+    outpadBlockClocksPort.set("name", "clock")
+    outpadBlockClocksPort.text = "open"
+    outpadBlockClocks.append(outpadBlockClocksPort)
+
+    subOutpadBlock = ET.Element("block")
+    subOutpadBlock.set("name", "out:_x1")
+    subOutpadBlock.set("instance", "outpad[0]")
+    subOutpadBlockAttributes = ET.Element("attributes")
+    subOutpadBlockParameters = ET.Element("parameters")
+    subOutpadBlockInputs = ET.Element("inputs")
+    subOutpadBlockInputsPort = ET.Element("port")
+    subOutpadBlockInputsPort.set("name", "outpad")
+    subOutpadBlockInputsPort.text = "io.outpad[0]->outpad"
+    subOutpadBlockOutputs = ET.Element("outputs")
+    subOutpadBlockClocks = ET.Element("clocks")
+
+    subOutpadBlockInputs.append(subOutpadBlockInputsPort)
+    subOutpadBlock.append(subOutpadBlockAttributes)
+    subOutpadBlock.append(subOutpadBlockParameters)
+    subOutpadBlock.append(subOutpadBlockInputs)
+    subOutpadBlock.append(subOutpadBlockOutputs)
+    subOutpadBlock.append(subOutpadBlockClocks)
+    outpadBlock.append(outpadBlockInputs)
+    outpadBlock.append(outpadBlockOutputs)
+    outpadBlock.append(outpadBlockClocks)
+    outpadBlock.append(subOutpadBlock)
+
+    root.append(outpadBlock)
+
+    inpadBlock = ET.Element("block")
+    inpadBlock.set("name", "pclk")
+    inpadBlock.set("instance", "io[3]")
+    inpadBlock.set("mode", "inpad")
+
+    inpadBlockInputs = ET.Element("inputs")
+    inpadBlockInputsPort = ET.Element("port")
+    inpadBlockInputsPort.set("name", "outpad")
+    inpadBlockInputsPort.text = "open"
+    inpadBlockInputs.append(inpadBlockInputsPort)
+    inpadBlockOutputs = ET.Element("outputs")
+    inpadBlockOutputsPort = ET.Element("port")
+    inpadBlockOutputsPort.set("name", "inpad")
+    inpadBlockOutputsPort.text = "inpad[0].inpad[0]->inpad"
+    inpadBlockOutputs.append(inpadBlockOutputsPort)
+    inpadBlockClocks = ET.Element("clocks")
+    inpadBlockClocksPort = ET.Element("port")
+    inpadBlockClocksPort.set("name", "clock")
+    inpadBlockClocksPort.text = "open"
+    inpadBlockClocks.append(inpadBlockClocksPort)
+
+    subInpadBlock = ET.Element("block")
+    subInpadBlock.set("name", "pclk")
+    subInpadBlock.set("instance", "inpad[0]")
+    subInpadBlockAttributes = ET.Element("attributes")
+    subInpadBlockParameters = ET.Element("parameters")
+    subInpadBlockInputs = ET.Element("inputs")
+    subInpadBlockOutputs = ET.Element("outputs")
+    subInpadBlockOutputsPort = ET.Element("port")
+    subInpadBlockOutputsPort.set("name", "inpad")
+    subInpadBlockOutputsPort.text = "pclk"
+    subInpadBlockClocks = ET.Element("clocks")
+
+    subInpadBlockOutputs.append(subInpadBlockOutputsPort)
+    subInpadBlock.append(subInpadBlockAttributes)
+    subInpadBlock.append(subInpadBlockParameters)
+    subInpadBlock.append(subInpadBlockInputs)
+    subInpadBlock.append(subInpadBlockOutputs)
+    subInpadBlock.append(subInpadBlockClocks)
+    inpadBlock.append(inpadBlockInputs)
+    inpadBlock.append(inpadBlockOutputs)
+    inpadBlock.append(inpadBlockClocks)
+    inpadBlock.append(subInpadBlock)
+
+    root.append(inpadBlock)
 
     tree = ET.ElementTree(root) 
       
