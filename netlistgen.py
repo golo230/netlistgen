@@ -47,7 +47,7 @@ for q1 in range(len(outgoing)):
 
 def write_packing_results_to_xml():
     root = ET.Element("block")                          # top block
-    root.set("name", "b1.net")
+    root.set("name", "TODO.net")
     root.set("instance", "FPGA_packed_netlist[0]")
     root.set("architecture_id", "SHA256:TODO")
     root.set("atom_netlist_id", "SHA256:TODO")
@@ -229,7 +229,7 @@ def write_packing_results_to_xml():
             subLutBlockInputsPortRotation.set("name", "in")
 
             subLutBlockText2 = ""
-            for m in reversed(range(len(bleInputList))):
+            for m in range(len(bleInputList)):
                 subLutBlockText2 +=  str(m) + " "
             
             if len(bleInputList) == input_size:
@@ -295,7 +295,7 @@ def write_packing_results_to_xml():
 
     outpadBlock = ET.Element("block")
     outpadBlock.set("name", "out:_x1")
-    outpadBlock.set("instance", "io[2]")
+    outpadBlock.set("instance", f"io[{clbNumber}]")
     outpadBlock.set("mode", "outpad")
 
     outpadBlockInputs = ET.Element("inputs")
@@ -341,7 +341,7 @@ def write_packing_results_to_xml():
 
     inpadBlock = ET.Element("block")
     inpadBlock.set("name", "pclk")
-    inpadBlock.set("instance", "io[3]")
+    inpadBlock.set("instance", f"io[{clbNumber + 1}]")
     inpadBlock.set("mode", "inpad")
 
     inpadBlockInputs = ET.Element("inputs")
