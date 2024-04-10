@@ -1,6 +1,7 @@
 import xml.etree.ElementTree as ET
 from xml.etree.ElementTree import tostring
 import xml.dom.minidom
+from numpy import array
 
 input_size = 140
 output_size = 40
@@ -19,36 +20,6 @@ temp_connectivity = [[(6, [108, 109, 110, 111, 132, 133, 134, 135, 156, 157, 158
 # output_size = 2
 # temp_connectivity = [[(3, [0, 2, 3]), (2, [1, 2, 3])],
 #  [(1, [0, 1, 3])]]
-
-connectivity = []
-
-for clbT in temp_connectivity: # change from 0-index to 1-index
-    temp1 = []
-    for bleT in clbT:
-        temp1.append((bleT[0] + 1, [x + 1 for x in bleT[1]]))
-    connectivity.append(temp1)
-
-outgoing = []
-for clbO in connectivity: # gets all indices/names of BLEs
-    temp2 = [bleO[0] for bleO in clbO]
-    outgoing.append(temp2)
-
-outgoing2 = []
-for q1 in range(len(outgoing)): # get all indices/names that are actually called by other CLBs
-    temp3 = []
-    detect = False
-    for element in outgoing[q1]:
-        for clbG in connectivity:
-            for bleG in clbG:
-                if bleG[0] not in outgoing[q1] and element in bleG[1]:
-                    temp3.append(element)
-                    detect = True
-                    break
-            if detect:
-                detect = False
-                break
-
-    outgoing2.append(temp3)
     
 # print(outgoing)
 # print(outgoing2)
@@ -58,7 +29,37 @@ for q1 in range(len(outgoing)): # get all indices/names that are actually called
  [(2, [1, 2, 4]), (1, [1, 2, 3])]]
 """
 
-def write_packing_results_to_xml():
+def write_packing_results_to_xml(temp_connectivity, input_size, output_size):
+    connectivity = []
+
+    for clbT in temp_connectivity: # change from 0-index to 1-index
+        temp1 = []
+        for bleT in clbT:
+            temp1.append((bleT[0] + 1, [x + 1 for x in bleT[1]]))
+        connectivity.append(temp1)
+
+    outgoing = []
+    for clbO in connectivity: # gets all indices/names of BLEs
+        temp2 = [bleO[0] for bleO in clbO]
+        outgoing.append(temp2)
+
+    outgoing2 = []
+    for q1 in range(len(outgoing)): # get all indices/names that are actually called by other CLBs
+        temp3 = []
+        detect = False
+        for element in outgoing[q1]:
+            for clbG in connectivity:
+                for bleG in clbG:
+                    if bleG[0] not in outgoing[q1] and element in bleG[1]:
+                        temp3.append(element)
+                        detect = True
+                        break
+                if detect:
+                    detect = False
+                    break
+
+        outgoing2.append(temp3)
+
     root = ET.Element("block")                          # top block
     root.set("name", "TODO.net")
     root.set("instance", "FPGA_packed_netlist[0]")
@@ -413,4 +414,4 @@ def write_packing_results_to_xml():
         files.write(pretty_xml)
 
 if __name__ == "__main__":          # adjust as needed
-    write_packing_results_to_xml()         
+    write_packing_results_to_xml(temp_connectivity, input_size, output_size)         
