@@ -51,4 +51,4 @@ results of packing alg (nested nested list)
 
 Input/Output Logic:  
 Inputs: CLB inputs are all the inputs taken in by the BLEs
-Outputs: CLB outputs are... TODO
+Outputs: CLB outputs are the nets taken by other CLBs that come from this CLB
